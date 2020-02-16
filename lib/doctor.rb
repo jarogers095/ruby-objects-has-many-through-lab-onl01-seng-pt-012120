@@ -20,6 +20,6 @@ class Doctor
   end
   
   def patients()
-    return Patient.all.selct{|patient| patient.doctor == self}
+    return self.appointments.collect{|app| app.patient}
   end
 end
