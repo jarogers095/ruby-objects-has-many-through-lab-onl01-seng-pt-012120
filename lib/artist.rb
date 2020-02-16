@@ -21,12 +21,7 @@ class Artist
   end
   
   def genres()
-    artists_genres = Song.all.select do |song|
-      if song.artist == self
-        return song.genre
-      end
-    end
-    return artists_genres
+    return self.songs.collect {|song| song.genre}
   end
 end
     
