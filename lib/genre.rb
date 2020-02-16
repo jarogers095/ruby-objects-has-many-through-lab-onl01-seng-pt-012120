@@ -16,7 +16,7 @@ class Genre
   end
   
   def artists()
-    
+    return self.songs.collect{|song| song.artist}
   end
 end
   
