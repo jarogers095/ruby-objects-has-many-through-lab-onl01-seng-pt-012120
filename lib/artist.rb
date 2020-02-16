@@ -16,11 +16,17 @@ class Artist
   end
   
   def new_song(name, genre)
-    a_song = Song.new(name, )
+    a_song = Song.new(name, self, genre)
+    return a_song
   end
   
   def genres()
-    
+    artists_genres = Song.all.select do |song|
+      if song.artist == self
+        song.genre
+      end
+    end
+    return artists_genres
   end
 end
     
