@@ -23,7 +23,7 @@ class Artist
   def genres()
     artists_genres = Song.all.select do |song|
       if song.artist == self
-        song.genre
+        return song.genre
       end
     end
     return artists_genres
